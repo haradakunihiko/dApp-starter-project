@@ -15,7 +15,7 @@ const App = () => {
   const [allWaves, setAllWaves] = useState([]);
   console.log("currentAccount: ", currentAccount);
   /* デプロイされたコントラクトのアドレスを保持する変数を作成 */
-  const contractAddress = "0x1B825E7A778FAf11674A515305D2Ae7E66562034";
+  const contractAddress = "0x580E4c7AB6064829e6DADaa82Feb50C66F3D3B68";
   /* コントラクトからすべてのwavesを取得するメソッドを作成 */
   /* ABIの内容を参照する変数を作成 */
   const contractABI = abi.abi;
@@ -164,7 +164,7 @@ const App = () => {
           wavePortalContract.address
         );
         /* コントラクトの残高が減っていることを確認 */
-        if (contractBalance_post < contractBalance) {
+        if (contractBalance_post.lt(contractBalance)) {
           /* 減っていたら下記を出力 */
           console.log("User won ETH!");
         } else {
